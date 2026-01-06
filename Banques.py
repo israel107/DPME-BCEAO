@@ -9,7 +9,7 @@ st.set_page_config(page_title="Bank Dashboard", page_icon="🏦", layout="wide")
 
 BASE_DIR = Path(__file__).parent
 st.markdown("<h2 style='text-align: left; font-size: 40px;  font-weight: bold;'>Tableau de bord du secteur bancaire</h2>", unsafe_allow_html=True)
-st.image(BASE_DIR / "files" / "pays_uemoa_png.png", caption="", width=False)
+st.image(BASE_DIR / "files" / "pays_uemoa_png.png", caption="", width='content')
 st.markdown("_DABFA-SFE v0.0.1_")
 
 #graphs will use css
