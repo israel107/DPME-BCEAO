@@ -9,7 +9,7 @@ st.set_page_config(page_title="Bank Dashboard", page_icon="🏦", layout="wide")
 
 BASE_DIR = Path(__file__).parent
 st.markdown("<h2 style='text-align: left; font-size: 40px;  font-weight: bold;'>Tableau de bord du secteur bancaire</h2>", unsafe_allow_html=True)
-st.image(BASE_DIR / "files" / "pays_uemoa_png.png", caption="", width='content')
+st.image("./pays_uemoa_png.png", caption="", width='content')
 st.markdown("_DABFA-SFE v0.0.1_")
 
 #graphs will use css
@@ -22,7 +22,7 @@ with open("style.css") as f:
 def load_data(path):
     return pd.read_excel(path)
 
-df_data = load_data(BASE_DIR / "files" / "Data_python.xlsx")
+df_data = load_data("./Data_python.xlsx")
 v = df_data.sort_values(ascending=True, by='Arrete')
 v = v.set_index(['Arrete'])
 
