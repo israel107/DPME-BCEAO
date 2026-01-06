@@ -4,9 +4,9 @@ from datetime import datetime
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent
-df_PME_benef = pd.read_excel(BASE_DIR / "files" / 'Stats SAE_PME.xlsx', sheet_name='PME_Benef')
-df_PME_accompagn = pd.read_excel(BASE_DIR / "files" / 'Stats SAE_PME.xlsx', sheet_name='PME_accompag')
-df_montant_accordes = pd.read_excel(BASE_DIR / "files" / 'Stats SAE_PME.xlsx', sheet_name='Montant_accord')
+df_PME_benef = pd.read_excel('./files/Stats SAE_PME.xlsx', sheet_name='PME_Benef')
+df_PME_accompagn = pd.read_excel('./files/Stats SAE_PME.xlsx', sheet_name='PME_accompag')
+df_montant_accordes = pd.read_excel('./files/Stats SAE_PME.xlsx', sheet_name='Montant_accord')
 
 montant_idx = df_montant_accordes.set_index(['pays'])
 T_montant_idx = montant_idx.transpose()
