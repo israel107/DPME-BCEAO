@@ -108,11 +108,11 @@ def treemap(title):
 c1, c2, c3 = st.columns(3)
 
 with c1:
-    st.plotly_chart(bar_vertical("Bar vertical", [10,20,15]), use_container_width=True)
+    st.plotly_chart(bar_vertical("Bar vertical", [10,20,15]), width = 'stretch')
 with c2:
-    st.plotly_chart(line_chart("Line chart"), use_container_width=True)
+    st.plotly_chart(line_chart("Line chart"), width = 'stretch')
 with c3:
-    st.plotly_chart(donut("Donut"), use_container_width=True)
+    st.plotly_chart(donut("Donut"), width = 'stretch')
 
 # ===============================
 # LIGNE 2
@@ -120,11 +120,11 @@ with c3:
 c4, c5, c6 = st.columns(3)
 
 with c4:
-    st.plotly_chart(bar_horizontal("Bar horizontal"), use_container_width=True)
+    st.plotly_chart(bar_horizontal("Bar horizontal"), width = 'stretch')
 with c5:
-    st.plotly_chart(gauge("Gauge"), use_container_width=True)
+    st.plotly_chart(gauge("Gauge"), width = 'stretch')
 with c6:
-    st.plotly_chart(bar_vertical("Bar vertical", [30,50,75]), use_container_width=True)
+    st.plotly_chart(bar_vertical("Bar vertical", [30,50,75]), width = 'stretch')
 
 # ===============================
 # LIGNE 3
@@ -132,11 +132,11 @@ with c6:
 c7, c8, c9 = st.columns(3)
 
 with c7:
-    st.plotly_chart(sunburst("Sunburst"), use_container_width=True)
+    st.plotly_chart(sunburst("Sunburst"), width = 'stretch')
 with c8:
-    st.plotly_chart(spider("Spider"), use_container_width=True)
+    st.plotly_chart(spider("Spider"), width = 'stretch')
 with c9:
-    st.plotly_chart(treemap("Treemap"), use_container_width=True)
+    st.plotly_chart(treemap("Treemap"), width = 'stretch')
 
 df = pd.DataFrame({
     "label": [
@@ -166,4 +166,4 @@ with c10:
     )
 
     fig.update_layout(margin=dict(t=40, l=0, r=0, b=0))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width = 'stretch')
