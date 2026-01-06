@@ -200,16 +200,16 @@ with tab1:
     with L0_col1:
         # fig = ch.bar_vertical(l_periode, DPME_montant_financement,"Evolution des montants de crédit octroyé aux PME "+mot+ " "+m_pays,"Semestre", "en Millions FCFA","15%",)
         fig = ch.bar_vertical(l_periode, DPME_montant_financement, "Evolution des montants de crédit octroyé aux PME<br> "+mot+ " "+m_pays,"En millions FCFA", "15%")
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, width='stretch')
 
     with L0_col2:
         
         fig = ch.bar_vertical(l_periode, nbr_PME_accompagn, "Nombre de PME accompagnées dans le cadre<br> du DPME "+mot+ " "+m_pays,"Nombre", "5%")
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, width='stretch')
 
     with L0_col3:
         fig = ch.bar_horizontal(nbr_PME_benef, l_periode,"Nombre de PME bénéficiaires de prêts dans le cadre<br> du DPME "+mot+ " "+m_pays,"Nombre", "Semestre","15%",)
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, width='stretch')
 # ------------------------------------------------------------------------------------------------------------------------------------
 # TAB 2
 # -------------------------------------------------------------------------------------------------------------------------------------
@@ -224,14 +224,14 @@ with tab2:
 
         fig = ch.chart_pie(l_pays, l_montant ,BC_colors, m_hole=.3, m_size_font=16,
                             m_titre='Part des crédits octroyés par les banques en '+ m_period_DPME+" (en millions FCFA)")
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, width='stretch')
 
     with Tab2_col2:
         w_periode = ['juin 2021','déc 2021','juin 2022','déc 2022',
                  'juin 2023','déc 2023','juin 2024','déc 2024', "total"]
         
         fig = ch.chart_Waterfall(w_periode, list_diff, "Evolution des crédits octroyés aux PME "+mot+" "+m_pays+" (en millions FCFA)", w_measure)
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, width='stretch')
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------
@@ -259,12 +259,12 @@ with tab3:
         
         fig = ch.bar_vertical(['Bénin',"Burkina Faso","Côte d'Ivoire", "Guinée Bissau","Mali","Niger","Sénégal","Togo"],
                             l_val, 'Evolution du financement des PME en '+ str(v_annee), 'Milliards FCFA',"10%")
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, width='stretch')
 
     with L1_col2:
         fig = ch.scatterMultiSelect(all_years, multi_pays, df_pays, 'Evolution du financement des PME par année', "Milliards FCFA")
 
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, width='stretch')
 
     with L1_col3:
         data_sel = 0
@@ -301,7 +301,7 @@ with tab3:
         # fig.update_layout(margin = dict(t=0, l=0, r=0, b=10))
 
 
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, width='stretch')
 # ------------------------------------------------------------------------------------------------------------------------------------
 # LIGNE 2
 # -------------------------------------------------------------------------------------------------------------------------------------
@@ -335,7 +335,7 @@ with L2_col1:
     l_res = [vf_2018, vf_2019, vf_2020, vf_2021, vf_2022, vf_2023, vf_2024]
 
     fig = ch.bar_horizontal(l_res, all_years, "Capitaux octroyés aux PME par "+m_bank,"Milliards FCFA","Années", "15%")
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 
 with L2_col2:
 
@@ -391,7 +391,7 @@ with L2_col2:
     fig = ch.bar_vertical(["Janv","Fev","Mars","Avr","Mai","Juin","Juil",
                            "Août","Sept","Oct","Nov","Dec"], l_resul, "Evolution mensuelle du financement des PME par "+m_bank+" en "+str(v_annee), "Milliard FCFA","15%",
                            'rgb(133, 32, 12)')
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 # ------------------------------------------------------------------------------------------------------------------------------------
 # LIGNE 3
 # -------------------------------------------------------------------------------------------------------------------------------------
@@ -417,7 +417,7 @@ with L3_col1:
         l_val = pa.get_contrib_par_pays(df_2024_dx)
 
     fig = ch.chart_pie(all_pays[:-1], l_val, BC_colors, m_hole=.3, m_size_font=16,  m_titre='Contribution des banques au financement des PME présentée des banques sises dans les Etats dans le  ' + str(v_annee))
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 with L3_col2:
@@ -463,7 +463,7 @@ with L3_col2:
     
 
     fig = ch.bar_vertical(vf['Bank'].values, vf['valeur'].values, "Classement des banques en "+ str(v_annee) +" "+mot +" "+m_pays, "Milliards FCFA","30%", 'rgb(228, 185, 176)')
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 # ------------------------------------------------------------------------------------------------------------------------------------
 # LIGNE Recap
 # -------------------------------------------------------------------------------------------------------------------------------------

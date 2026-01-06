@@ -98,7 +98,7 @@ with col1_1:
                             new_data_y_1, 'Evolution ' + v_post_1+ " en " + str(v_annee), 'Milliards (FCFA)',
                             "10%")
     
-    st.plotly_chart(m_fig, width=True)
+    st.plotly_chart(m_fig, width='stretch')
     
 
 with col1_2:
@@ -109,7 +109,7 @@ with col1_2:
                             new_data_y_2, 'Evolution ' + v_post_2 + " en " + str(v_annee), 'Milliards (FCFA)',
                             "30%", 'rgb(105, 46, 34)')
     
-    st.plotly_chart(m_fig, width=True)
+    st.plotly_chart(m_fig, width='stretch')
 
 with col1_3:
     v_post_3 = st.selectbox('Postes (Graphe 3)', m_post, 3)
@@ -119,7 +119,7 @@ with col1_3:
                             new_data_y_3, 'Evolution ' + v_post_3 + " en " + str(v_annee), 'Milliards (FCFA)',
                             "60%", 'rgb(228, 185, 176)')
     
-    st.plotly_chart(m_fig, width=True)
+    st.plotly_chart(m_fig, width='stretch')
 
 
 ################################################# COUNTRY CHART LINE 2 ###########################################################################
@@ -134,7 +134,7 @@ with col2_1:
     m_fig = ch.chart_pie(v_instru, res_vf, BC_colors, m_hole=.3, m_size_font=16,
                          m_titre='Part des instruments financiers en ' + str(v_annee))
 
-    st.plotly_chart(m_fig, width=True)
+    st.plotly_chart(m_fig, width='stretch')
 
 vf_instru = al.get_classement_Instrument(v, m_pays, v_annee)
 
@@ -143,7 +143,7 @@ with col2_2:
     m_fig = ch.bar_horizontal(vf_instru.values, vf_instru.index, 'Instruments financiers les plus utilisés ' + str(v_annee),
                               x_titre='Milliards (FCFA)', y_titre="Instruments Fin.",m_corner="60%", m_color="rgb(228, 185, 176)")
 
-    st.plotly_chart(m_fig, width=True)
+    st.plotly_chart(m_fig, width='stretch')
 
 
 x_value_LT, y_value_LT = al.get_credit(v,m_pays, 'Crédits à long terme',v_annee, v_periode )
@@ -169,7 +169,7 @@ with col1:
                             y_title="Milliards FCFA",
                             m_col1="rgb(133, 32, 12)", m_col2="rgb(194, 72, 48)", m_col3='rgb(228, 185, 176)')
     
-    st.plotly_chart(m_fig_1, width=True)
+    st.plotly_chart(m_fig_1, width='stretch')
 
     ################################## CHART EN DESSOUS #####################
 
@@ -179,7 +179,7 @@ with col2:
                             res_date, 'Montant '+ un_instru + " de 2018 à 2024", 'Milliards (FCFA)',
                             "10%", 'rgb(228, 185, 176)')
     
-    st.plotly_chart(m_fig_2, width=True)
+    st.plotly_chart(m_fig_2, width='stretch')
 
 comp1, comp2 = st.columns(2, gap='small')
 
@@ -192,7 +192,7 @@ with comp1:
                             y_value_MT,'Evolution ' + v_post_2 + str(v_annee), 'Milliards (FCFA)',
                             "30%", 'rgb(194, 72, 48)')
     
-    st.plotly_chart(m_fig_1, width=True)
+    st.plotly_chart(m_fig_1, width='stretch')
 
     ################################## CHART EN DESSOUS #####################
     
@@ -204,7 +204,7 @@ with comp2:
     m_fig_2 = ch.bar_vertical(x_value_CT,
                             y_value_CT,'Evolution '+ v_post_3 + str(v_annee), 'Milliards (FCFA)',
                             "40%", 'rgb(228, 185, 176)')
-    st.plotly_chart(m_fig_2, width=True)
+    st.plotly_chart(m_fig_2, width='stretch')
 
 st.success("Commentaire Chart")
 
@@ -223,14 +223,14 @@ with col1_1:
     m_fig_1 = ch.bar_vertical(top_bank,
                             top_bank_value,'Top 5 des banques (montant '+ un_instru + " en " +str(v_annee)+")", 'Milliards (FCFA)',
                             "25%", 'rgb(194, 72, 48)')
-    st.plotly_chart(m_fig_1, width=True)
+    st.plotly_chart(m_fig_1, width='stretch')
 
 
 with col1_2:
     m_fig_2 = ch.bar_vertical(flop_bank,
                             flop_bank_value,'Flop 5 des banques (montant '+ un_instru + " en " +str(v_annee)+")", 'Milliards (FCFA)',
                             "25%", 'rgb(188, 92, 48)')
-    st.plotly_chart(m_fig_2, width=True)
+    st.plotly_chart(m_fig_2, width='stretch')
 
     if len(flop_max)>=4:
         st.info("Nombre de banques ayant un montant de "+ un_instru +" avoisinant zéro: **"+ str(nbr_flop_max) +"**. Quelques noms de banques : " +flop_max[0]+", "+flop_max[1]+", "+flop_max[2]+", "+flop_max[3]+'.')
@@ -249,7 +249,7 @@ with col1:
     m_fig_1 = ch.bar_vertical(top_instru,
                             top_value,'Classement des instruments (en mds FCFA) utilisés par '+ v_bank + " en " +str(v_annee), 'Milliards (FCFA)',
                             "25%", 'rgb(228, 185, 176)')
-    st.plotly_chart(m_fig_1, width=True)
+    st.plotly_chart(m_fig_1, width='stretch')
 
 ress_list, emp_list = al.get_ress_empl(v, v_bank)
 with col2: 
@@ -257,7 +257,7 @@ with col2:
     m_fig = ch.doubleBar(ms_dates, ress_list, emp_list, 'Ressources & Emploi de '+ v_bank,'Milliards FCFA',
                          legend_1='Total Ressource', legend_2='Total Emploi', m_color1='rgb(228, 185, 176)', m_color2='rgb(194, 72, 48)')
     
-    st.plotly_chart(m_fig, width=True)
+    st.plotly_chart(m_fig, width='stretch')
 
 b_col1, b_col2 = st.columns(2, gap='small')
 
@@ -291,12 +291,12 @@ with b_col1:
 
     fig = ch.m_SunBurts(labels, parents, m_values, "Emplois vs Ressources "+v_bank+" (en mds FCFA)")
 
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 
 with b_col2:
     fig = ch.m_polarChart(l_radar[0],l_radar[1],l_radar[2],l_radar[3],l_radar[4],l_radar[5],
                           l_radar[6],l_radar[7],l_radar[8],l_radar[9], v_bank)
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 
 #####################################################"""""RATIOS"""""###############################################RATIOS###########
 st.divider()
@@ -315,18 +315,18 @@ l_creance_souff, l_creance_dout, l_couv_creance = al.get_qualityPF(v, v_bank)
 with col1_1:
     fig = ch.scatterRatios(['2018','2019','2021','2022','2023','2024'], l_solvabilite_globale, l_fonds_propres,
                            "Ratios de solvabilité & Fonds propres de <u>"+v_bank +"</u>","Pourcentage (%)", "Solvabilité Globale","R. de Fonds Prop.")
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 
 with col1_2:
     fig = ch.scatterRatios(['2018','2019','2021','2022','2023','2024'], l_liquidity_imm, l_empl_ress,
                            "Ratios de liquidité immédiate & Emplois-Ressources de <u>"+v_bank +"</u>","Pourcentage (%)","Liq. immédiate","emplois/ressources")
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 
 with col1_3:
     fig = ch.scatter_3_Ratios(['2018','2019','2021','2022','2023','2024'], l_creance_souff, l_creance_dout, l_couv_creance,
                               "Taux de créances en souffrance, créances douteuses et <br>de couv. des créances de <u>"+v_bank +"</u>","Pourcentage (%)",
                               "créances en souffrance","Créances douteuse","Couv. des créances douteuses")
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, width='stretch')
 
 st.markdown('##### _*Structure du Bilan & Rentabilité*_')
 
