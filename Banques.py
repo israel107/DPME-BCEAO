@@ -21,7 +21,7 @@ with open("style.css") as f:
 home_page = st.Page(
     "Pages/DPME.py",
     title="DPME",
-    icon=":material/📈:",
+    icon=":material/bar_chart:",
 )
 
 @st.cache_data
