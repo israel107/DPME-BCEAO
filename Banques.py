@@ -7,7 +7,7 @@ from pathlib import Path
 
 st.set_page_config(page_title="Bank Dashboard", page_icon="🏦", layout="wide")
 
-BASE_DIR = Path(__file__).parent
+
 st.markdown("<h2 style='text-align: left; font-size: 40px;  font-weight: bold;'>Tableau de bord du secteur bancaire</h2>", unsafe_allow_html=True)
 st.image("./files/pays_uemoa_png.png", caption="", width='content')
 st.markdown("_DABFA-SFE v0.0.1_")
@@ -17,6 +17,12 @@ theme_plotly = None
 
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html= True)
+
+home_page = st.Page(
+    "Pages/DPME.py",
+    title="DPME",
+    icon=":material/📈:",
+)
 
 @st.cache_data
 def load_data(path):
