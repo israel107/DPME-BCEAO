@@ -5,9 +5,11 @@ import pandas as pd
 import PME_analyse as pa
 import charts as ch
 import numpy as np
+from pathlib import Path
 
 st.set_page_config(page_title="DPME Dashboard", page_icon="📈", layout="wide")
 st.markdown("<h2 style='text-align: left; font-size: 40px;  font-weight: bold;'>Tableau de bord du DPME</h2>", unsafe_allow_html=True)
+BASE_DIR = Path(__file__).parent
 
 # -------------------------------
 # DATA & VARIABLES
@@ -20,9 +22,9 @@ with open("style.css") as f:
 def load_data(path, feuille):
     return pd.read_excel(path, sheet_name=feuille)
 
-df_ALL = load_data('C:/Users/ckoupoh/Documents/PME_SFE/files/PME_ALL_Dec_2025.xlsx', ["data_2018", "data_2019","data_2020","data_2021","data_2022",
+df_ALL = load_data(BASE_DIR / "files" / 'PME_ALL_Dec_2025.xlsx', ["data_2018", "data_2019","data_2020","data_2021","data_2022",
                                                                                                  "data_2024" ])
-df_2023 = load_data("C:/Users/ckoupoh/Documents/PME_SFE/files/PME_2023_DEC.xlsx", "data_2023")
+df_2023 = load_data(BASE_DIR / "files" / "PME_2023_DEC.xlsx", "data_2023")
 
 df_2018 = df_ALL['data_2018']
 df_2019 = df_ALL['data_2019']
