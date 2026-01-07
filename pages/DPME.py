@@ -6,7 +6,7 @@ import PME_analyse as pa
 import charts as ch
 import numpy as np
 
-st.set_page_config(page_title="DPME Dashboard", page_icon="📈", layout="wide")
+#st.set_page_config(page_title="DPME Dashboard", page_icon="📈", layout="wide")
 st.markdown("<h2 style='text-align: left; font-size: 40px;  font-weight: bold;'>Tableau de bord du DPME</h2>", unsafe_allow_html=True)
 
 # -------------------------------
