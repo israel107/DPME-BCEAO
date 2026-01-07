@@ -19,8 +19,8 @@ with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html= True)
 
 home_page = st.Page(
-    "Pages/DPME.py",
-    title="DPME",
+    "pages/DPME.py",
+    title="DPME Dashboard",
     icon=":material/bar_chart:",
 )
 
