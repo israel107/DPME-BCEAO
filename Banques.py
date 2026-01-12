@@ -8,7 +8,7 @@ from pathlib import Path
 st.set_page_config(page_title="Bank Dashboard", page_icon="🏦", layout="wide")
 
 
-st.markdown("<h2 style='text-align: left; font-size: 40px;  font-weight: bold;'>Tableau de bord du secteur bancaire</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: left; font-size: 40px;  font-weight: bold;'>Tableau de bord du financement global des PME</h2>", unsafe_allow_html=True)
 st.image("./files/pays_uemoa_png.png", caption="", width='content')
 st.markdown("_DABFA-SFE v0.0.1_")
 
