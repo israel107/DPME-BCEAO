@@ -265,46 +265,6 @@ with col2:
     
     st.plotly_chart(m_fig, width='stretch')
 
-b_col1, b_col2 = st.columns(2, gap='small')
-
-l_ress_emploi = al.struct_emp_ressource(v, v_bank, v_annee)
-# print(l_ress_emploi)
-l_radar = al.get_radar_data(v, v_annee, v_bank)
-
-with b_col1:
-
-    
-    labels = [
-    "Répartition",
-    "Emplois", "Ressources",
-    "Crédit", "Portefeuille Titres", "Autres emplois",
-    "F Propres", "Emprunts & Depot"
-    ]
-
-    parents = [
-        "",          # Total
-        "Répartition", "Répartition",
-        "Emplois", "Emplois", "Emplois",
-        "Ressources", "Ressources"
-    ]
-    values = [
-    100,         # Total
-    60, 40,      # Partie A / Partie B
-    20, 25, 15,  # A1 / A2 / A3
-    10, 30   # B1 / B2 / B3
-]
-    m_values = l_ress_emploi 
-
-    fig = ch.m_SunBurts(labels, parents, m_values, "Emplois vs Ressources "+v_bank+" (en mds FCFA)")
-
-    st.plotly_chart(fig, width='stretch')
-
-with b_col2:
-    fig = ch.m_polarChart(l_radar[0],l_radar[1],l_radar[2],l_radar[3],l_radar[4],l_radar[5],
-                          l_radar[6],l_radar[7],l_radar[8],l_radar[9], v_bank)
-    st.plotly_chart(fig, width='stretch')
-
-
 #####################################################"""""RECAP"""""###############################################RECAP###########
 st.divider()
 st.markdown("#### Ratios du financement de l'économie ")
