@@ -304,51 +304,16 @@ with b_col2:
                           l_radar[6],l_radar[7],l_radar[8],l_radar[9], v_bank)
     st.plotly_chart(fig, width='stretch')
 
-#####################################################"""""RATIOS"""""###############################################RATIOS###########
-st.divider()
-st.markdown('#### Ratios')
-
-st.markdown('##### _*Solidité*_')
-#Taux net de dégradation du portefeuille
-#Taux de provisionnement
-#Ratio de solvabilité
-col1_1, col1_2, col1_3 = st.columns(3, gap='small')
-l_solvabilite_globale, l_fonds_propres = al.get_solidite_ratio(v, v_bank)
- 
-l_liquidity_imm, l_empl_ress = al.get_liquidite_ratio(v, v_bank)
-l_creance_souff, l_creance_dout, l_couv_creance = al.get_qualityPF(v, v_bank)
-
-with col1_1:
-    fig = ch.scatterRatios(['2018','2019','2021','2022','2023','2024'], l_solvabilite_globale, l_fonds_propres,
-                           "Ratios de solvabilité & Fonds propres de <u>"+v_bank +"</u>","Pourcentage (%)", "Solvabilité Globale","R. de Fonds Prop.")
-    st.plotly_chart(fig, width='stretch')
-
-with col1_2:
-    fig = ch.scatterRatios(['2018','2019','2021','2022','2023','2024'], l_liquidity_imm, l_empl_ress,
-                           "Ratios de liquidité immédiate & Emplois-Ressources de <u>"+v_bank +"</u>","Pourcentage (%)","Liq. immédiate","emplois/ressources")
-    st.plotly_chart(fig, width='stretch')
-
-with col1_3:
-    fig = ch.scatter_3_Ratios(['2018','2019','2021','2022','2023','2024'], l_creance_souff, l_creance_dout, l_couv_creance,
-                              "Taux de créances en souffrance, créances douteuses et <br>de couv. des créances de <u>"+v_bank +"</u>","Pourcentage (%)",
-                              "créances en souffrance","Créances douteuse","Couv. des créances douteuses")
-    st.plotly_chart(fig, width='stretch')
-
-st.markdown('##### _*Structure du Bilan & Rentabilité*_')
-
-l_ROA, l_ROE = al.get_rentability(v, v_bank)
-
-l_tx_interm, l_autonomie, l_depot_stab = al.get_structure(v, v_bank)
 
 #####################################################"""""RECAP"""""###############################################RECAP###########
 st.divider()
-st.markdown('#### Récap.')
+st.markdown("#### Ratios du financement de l'économie ")
 
 L4_col1, L4_col2 = st.columns(2, gap='small')
 
 with L4_col1:
     st.info("""
-        **POINTS FORTS**
+        **En hausse**
             
 
         - xxx
@@ -358,5 +323,12 @@ with L4_col1:
 
 
 with L4_col2:
-    st.error("**"+"POINTS FAIBLES"+"**")
+    st.error("""
+        **En baisse**
+            
+
+        - xxx
+        - xxx
+        - xxx
+        """)
 
